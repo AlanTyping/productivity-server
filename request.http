@@ -1,0 +1,19 @@
+###
+GET http://localhost:9000/api HTTP/1.1
+
+###
+POST http://localhost:9000/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Mercado",
+    "description": "Es un intercambio de bienes",
+    "color": "blanco"
+}
+
+###
+PUT http://localhost:9000/api/12 HTTP/1.1
+Content-Type: application/json
+
+###
+DELETE http://localhost:9000/api/2 HTTP/1.1
