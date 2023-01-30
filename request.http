@@ -7,8 +7,7 @@ Content-Type: application/json
 
 {
     "title": "Mercado",
-    "description": "Es un intercambio de bienes",
-    "color": "blanco"
+    "description": "Es un intercambio de bienes"
 }
 
 ###

@@ -1,19 +1,26 @@
-const express = require('express');
-const mysql = require('mysql');
-const myconn = require('express-myconnection');
-const cors = require('cors');
+import express from 'express';
+import mysql from 'mysql';
+import myconn from 'express-myconnection';
+import cors from 'cors';
+import routes from './routes.js';
 
-const routes = require('./routes')
+import {
+    DB_HOST,
+    DB_NAME,
+    DB_PASSWORD,
+    DB_USER,
+    DB_PORT
+} from './config.js'
 
 const app = express();
 app.set('port', process.env.PORT || 9000);
 
 const dbOptions = {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'mermelada',
-    database: 'productivity'
+    user: DB_USER,
+    password: DB_PASSWORD,
+    host: DB_HOST,
+    port: DB_PORT,
+    database: DB_NAME
 }
 
 // middlewares -------------------------------------
@@ -28,6 +35,6 @@ app.get('/', (req, res) => {
 app.use('/api', routes);
 
 // server running -----------------------------------
-app.listen(app.get('port'), ()=>{
+app.listen(app.get('port'), () => {
     console.log('server running on port', app.get('port'))
 });
